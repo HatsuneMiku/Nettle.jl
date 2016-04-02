@@ -73,7 +73,7 @@ function get_cipher_types()
     return _cipher_types
 end
 
-const _cipher_suites = [:CBC] # [:CBC, :GCM, :CCM]
+const _cipher_suites = [:CBC, :CTR] # [:CBC, :CTR, :GCM, :CCM]
 
 function gen_key32_iv16(pw::Array{UInt8,1}, salt::Array{UInt8,1})
     s1 = digest("MD5", [pw; salt])
